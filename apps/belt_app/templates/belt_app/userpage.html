@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Python Belt Exam</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Post By: {{user.first_name}}</h1>
+        <br>
+        <a href="/logout">Logout</a>
+        <br>
+        <a href="/dashboard">Dashboard</a>
+        <br>
+        {% for quoter in counter %}
+            {% if quoter.id == user.id %}
+            <p>Count: {{quoter.counter}}</p>
+            {% endif %}
+        {% endfor %}
+        {% for quote in quotes %}
+            {% if quote.user_id == user.id %}
+            <p>{{quote.name}}: {{quote.content}}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+</body>
+</html>
